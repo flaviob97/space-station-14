@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
-namespace Content.Shared.Solar.Components;
+namespace Content.Shared.Solar;
 
 /// <summary>
 ///     This is a solar panel.
@@ -21,17 +21,8 @@ public sealed class SolarPanelComponent : Component
     public int MaxSupply = 1500;
 
     /// <summary>
-    /// Current coverage of this panel (from 0 to 1).
-    /// This is updated by <see cref='PowerSolarSystem'/>.
-    /// DO NOT WRITE WITHOUT CALLING UpdateSupply()!
-    /// </summary>
-    [ViewVariables]
-    public float Coverage = 0;
-
-    /// <summary>
     /// Current solar panel angle (updated by <see cref="PowerSolarSystem"/>)
     /// </summary>
-    [DataField("angle")]
     [ViewVariables]
     public Angle Angle = Angle.Zero;
 
